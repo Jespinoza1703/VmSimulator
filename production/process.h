@@ -1,11 +1,26 @@
 #ifndef PROCESS_H
 #define PROCESS_H
 
+#include "draw/drawable.h"
 
-class Process
+#include <QString>
+#include <QTime>
+#include <QDebug>
+
+
+class Process : public Drawable
 {
 public:
-    Process();
+    Process(QString id, float time);
+
+    void draw();
+
+private:
+    QString id;
+    float time;
+    float percent;
+    float elapsedTime;
+    QTime startTime;
 };
 
 #endif // PROCESS_H
