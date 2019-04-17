@@ -6,6 +6,7 @@
 #include <QString>
 #include <QTime>
 #include <QDebug>
+#include <QLabel>
 
 
 class Process : public Drawable

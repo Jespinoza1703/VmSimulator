@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "draw/drawable.h"
+#include "production/process.h"
+#include "production/vehicle.h"
 
 namespace Ui {
 class MainWindow;
@@ -14,6 +17,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    void drawWidgets();
 
 
 

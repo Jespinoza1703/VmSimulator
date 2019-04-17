@@ -3,6 +3,7 @@
 
 #include <QList>
 #include "process.h"
+#include <QHBoxLayout>
 
 class Vehicle
 {
