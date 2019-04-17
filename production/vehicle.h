@@ -12,6 +12,8 @@ public:
 
     void addComponent(Process *component);
 
+    QList<Process *> getComponents() const;
+
 private:
     QString id;
     QList<Process *> components;
