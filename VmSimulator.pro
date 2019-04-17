@@ -33,6 +33,7 @@ SOURCES += \
     production/vehicle.cpp
 
 HEADERS += \
+	draw/drawable.h \
         mainwindow.h \
     util/chronometer.h \
     draw/drawer.h \

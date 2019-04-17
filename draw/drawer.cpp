@@ -1,13 +1,24 @@
 #include "drawer.h"
 
-Drawer *Drawer::instance = nullptr;
+Drawer *Drawer::instance = new Drawer();
 
-Drawer::Drawer(){}
+Drawer::Drawer(QObject *parent) :
+    QThread(parent)
+{
+}
 
 Drawer *Drawer::getInstance()
 {
-    if (instance == nullptr) instance = new Drawer();
-
     return instance;
+}
+
+void Drawer::run()
+{
+    // Loop
+    for (int i = 0; i < drawables.size(); i++) {
+        drawables.value(i).draw();
+    }
+
+    exec();
 }
 

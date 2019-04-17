@@ -1,17 +1,24 @@
 #ifndef DRAWER_H
 #define DRAWER_H
 
+#include "drawable.h"
 
-class Drawer
+#include <QThread>
+
+
+class Drawer : public QThread
 {
-
+    Q_OBJECT
 public:
     static Drawer *getInstance();
-    void drawRect();
+
+    void run();
 
 private:
-    Drawer();
     static Drawer *instance;
+    QList<Drawable> drawables;
+
+    Drawer(QObject *parent = 0);
 };
 
 #endif // DRAWER_H
