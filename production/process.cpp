@@ -9,6 +9,6 @@ Process::Process(QString id, float time) :
 
 void Process::draw()
 {
-    elapsedTime = startTime.elapsed();
+    float elapsedTime = startTime.elapsed();
     percent = elapsedTime / time;
 }

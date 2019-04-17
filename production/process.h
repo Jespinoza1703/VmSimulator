@@ -19,7 +19,6 @@ private:
     QString id;
     float time;
     float percent;
-    float elapsedTime;
     QTime startTime;
 };
 
