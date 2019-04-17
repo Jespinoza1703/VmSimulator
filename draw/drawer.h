@@ -3,16 +3,27 @@
 
 #include "drawable.h"
 
-#include <QThread>
+#include <QObject>
+#include <QTimer>
 
 
-class Drawer : public QThread
+class Drawer : public QObject
 {
     Q_OBJECT
 public:
     static Drawer *getInstance();
 
     void run();
+
+    void addDrawable(Drawable *drawable);
+
+    void removeDrawable(Drawable *drawable);
+
+signals:
+    void start();
+
+public slots:
+    void draw();
 
 private:
     static Drawer *instance;
