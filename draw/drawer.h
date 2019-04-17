@@ -16,9 +16,9 @@ public:
 
 private:
     static Drawer *instance;
-    QList<Drawable> drawables;
+    QList<Drawable *> drawables;
 
-    Drawer(QObject *parent = 0);
+    Drawer(QObject *parent = nullptr);
 };
 
 #endif // DRAWER_H

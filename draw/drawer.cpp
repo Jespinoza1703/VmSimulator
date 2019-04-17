@@ -15,8 +15,9 @@ Drawer *Drawer::getInstance()
 void Drawer::run()
 {
     // Loop
-    for (int i = 0; i < drawables.size(); i++) {
-        drawables.value(i).draw();
+    for (Drawable *drawable : drawables)
+    {
+        drawable->draw();
     }
 
     exec();
