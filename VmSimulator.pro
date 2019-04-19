@@ -27,11 +27,17 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    util/chronometer.cpp
+    util/chronometer.cpp \
+    draw/drawer.cpp \
+    production/process.cpp \
+    production/vehicle.cpp
 
 HEADERS += \
         mainwindow.h \
-    util/chronometer.h
+    util/chronometer.h \
+    draw/drawer.h \
+    production/process.h \
+    production/vehicle.h
 
 FORMS += \
         mainwindow.ui
