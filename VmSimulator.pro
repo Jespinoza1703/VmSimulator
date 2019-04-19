@@ -26,10 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    util/chronometer.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    util/chronometer.h
 
 FORMS += \
         mainwindow.ui
