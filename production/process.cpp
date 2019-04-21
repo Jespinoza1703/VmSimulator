@@ -1,7 +1,7 @@
 #include "process.h"
 
-Process::Process(QString id, float time) :
-    id(id), time(time)
+Process::Process(QString id, float time, QWidget *widget) :
+    id(id), time(time), widget(widget)
 {
     percent = 0;
     startTime.start();

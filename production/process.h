@@ -11,7 +11,7 @@
 class Process : public Drawable
 {
 public:
-    Process(QString id, float time);
+    Process(QString id, float time, QWidget *widget);
 
     void draw();
 
@@ -20,6 +20,7 @@ private:
     float time;
     float percent;
     QTime startTime;
+    QWidget *widget;
 };
 
 #endif // PROCESS_H
