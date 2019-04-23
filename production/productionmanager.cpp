@@ -9,13 +9,13 @@ ProductionManager *ProductionManager::getInstance()
 
 void ProductionManager::run()
 {
-    updateQueues();
+    QTimer::singleShot(1000, this, &ProductionManager::updateQueues);
 }
 
-void ProductionManager::addVehicle(Vehicle vehicle, int type)
+void ProductionManager::addVehicle(Vehicle *vehicle, int type)
 {
     QList<Process *> *waitingQueue = waitingQueues.value(type - 1);
-    for (Process *process : vehicle.getComponents())
+    for (Process *process : vehicle->getComponents())
     {
         waitingQueue->push_back(process);
     }
@@ -56,8 +56,8 @@ QList<QList<Process *> *> ProductionManager::getRunningQueues() const
 
 ProductionManager::ProductionManager()
 {
-    updateTime = 5000;
     drawer = Drawer::getInstance();
+    updateTime = 5000;
     queueLimit = 3;
     productionLines = 6;
 
@@ -86,5 +86,6 @@ void ProductionManager::fillRunningQueue(int index)
         if (waitingQueue->isEmpty()) break;
         Process *process = waitingQueue->takeFirst();
         runningQueue->push_back(process);
+        enqueueProcess(process);
     }
 }

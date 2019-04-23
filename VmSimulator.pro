@@ -27,18 +27,18 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-	production/productionmanager.cpp \
     util/chronometer.cpp \
     draw/drawer.cpp \
+    production/productionmanager.cpp \
     production/process.cpp \
     production/vehicle.cpp
 
 HEADERS += \
 	draw/drawable.h \
         mainwindow.h \
-	production/productionmanager.h \
     util/chronometer.h \
     draw/drawer.h \
+    production/productionmanager.h \
     production/process.h \
     production/vehicle.h
 

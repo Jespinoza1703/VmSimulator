@@ -5,6 +5,7 @@
 
 #include <QObject>
 #include <QTimer>
+#include <QDebug>
 
 
 class Drawer : public QObject
@@ -27,7 +28,7 @@ private:
     static Drawer *instance;
     QList<Drawable *> drawables;
 
-    Drawer(QObject *parent = nullptr);
+    Drawer();
 };
 
 #endif // DRAWER_H

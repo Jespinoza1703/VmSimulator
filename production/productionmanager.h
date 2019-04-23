@@ -3,9 +3,10 @@
 
 #include <QTimer>
 
+#include <draw/drawer.h>
+
 #include "process.h"
 #include "vehicle.h"
-#include "draw/drawer.h"
 
 class ProductionManager : public QObject
 {
@@ -16,7 +17,7 @@ public:
 
     void run();
 
-    void addVehicle(Vehicle vehicle, int type);
+    void addVehicle(Vehicle *vehicle, int type);
 
     QList<QList<Process *> *> getRunningQueues() const;
 

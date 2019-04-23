@@ -1,7 +1,5 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include <draw/drawer.h>
-#include <production/process.h>
 
 int main(int argc, char *argv[])
 {

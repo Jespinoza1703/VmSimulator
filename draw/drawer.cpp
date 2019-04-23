@@ -2,8 +2,7 @@
 
 Drawer *Drawer::instance = new Drawer();
 
-Drawer::Drawer(QObject *parent) :
-    QObject(parent)
+Drawer::Drawer()
 {
 }
 

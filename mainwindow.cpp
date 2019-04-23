@@ -9,17 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     makeWidgets();
 
-    Vehicle *vehicleA = new Vehicle("A");
-    Process *processA = new Process("A", 30000, widgetList[0]);
-    //Process *processB = new Process("B", 2000, widgetList[0]);
-    //Process *processC = new Process("C", 2000, widgetList[0]);
-
-    drawer->addDrawable(processA);
-    //drawer->addDrawable(processB);
-    //drawer->addDrawable(processC);
-
     drawer->run();
-
+    production->run();
 }
 
 MainWindow::~MainWindow()
