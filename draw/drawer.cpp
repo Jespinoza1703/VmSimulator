@@ -5,7 +5,6 @@ Drawer *Drawer::instance = new Drawer();
 Drawer::Drawer(QObject *parent) :
     QObject(parent)
 {
-    QObject::connect(this, &Drawer::start, this, &Drawer::draw);
 }
 
 Drawer *Drawer::getInstance()
@@ -15,7 +14,7 @@ Drawer *Drawer::getInstance()
 
 void Drawer::run()
 {
-    draw();
+    QTimer::singleShot(100, this, &Drawer::draw);
 }
 
 void Drawer::addDrawable(Drawable *drawable)

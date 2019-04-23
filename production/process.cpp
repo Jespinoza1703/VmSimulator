@@ -5,6 +5,7 @@ Process::Process(QString id, float time, QWidget *widget) :
 {
     percent = 0;
     startTime.start();
+    makeLb();
 }
 
 void Process::draw()
@@ -12,7 +13,17 @@ void Process::draw()
     float elapsedTime = startTime.elapsed();
     percent = elapsedTime / time;
 
-    QLabel *idLb = new QLabel();
+    float x = percent * idLb->width();
+    rectangle->setStyleSheet("QLabel { background-color: green; }");
+    rectangle->resize(x, idLb->height());
+
+    idLb->show();
+    rectangle->show();
+}
+
+void Process::makeLb()
+{
+    idLb = new QLabel();
     idLb->setText(id);
     idLb->setAlignment(Qt::AlignCenter);
     idLb->setStyleSheet("QLabel { background-color: #979b8d; }");
@@ -21,5 +32,7 @@ void Process::draw()
     int processes = widget->children().size();
     if (processes > 1) idLb->move(10*processes + (processes - 1)*100, 10);
     else idLb->move(10, 10);
+
+    rectangle = new QLabel(idLb);
 
 }

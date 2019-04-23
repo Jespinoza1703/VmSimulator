@@ -10,13 +10,15 @@ MainWindow::MainWindow(QWidget *parent) :
     makeWidgets();
 
     Vehicle *vehicleA = new Vehicle("A");
-    Drawable *processA = new Process("A", 2, widgetList[0]);
-    processA->draw();
-    Drawable *processB = new Process("B", 2, widgetList[0]);
-    processB->draw();
-    Drawable *processC = new Process("C", 2, widgetList[0]);
-    processC->draw();
+    Process *processA = new Process("A", 30000, widgetList[0]);
+    //Process *processB = new Process("B", 2000, widgetList[0]);
+    //Process *processC = new Process("C", 2000, widgetList[0]);
 
+    drawer->addDrawable(processA);
+    //drawer->addDrawable(processB);
+    //drawer->addDrawable(processC);
+
+    drawer->run();
 
 }
 

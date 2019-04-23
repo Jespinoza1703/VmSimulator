@@ -10,6 +10,7 @@
 class Drawer : public QObject
 {
     Q_OBJECT
+
 public:
     static Drawer *getInstance();
 
@@ -18,9 +19,6 @@ public:
     void addDrawable(Drawable *drawable);
 
     void removeDrawable(Drawable *drawable);
-
-signals:
-    void start();
 
 public slots:
     void draw();

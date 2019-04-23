@@ -5,6 +5,7 @@
 #include "draw/drawable.h"
 #include "production/process.h"
 #include "production/vehicle.h"
+#include "draw/drawer.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,7 +21,7 @@ public:
 
     void makeWidgets();
 
-
+    Drawer *drawer = Drawer::getInstance();
 
 private:
     Ui::MainWindow *ui;
