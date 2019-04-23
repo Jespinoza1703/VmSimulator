@@ -31,7 +31,7 @@ void Drawer::removeDrawable(Drawable *drawable)
 
 void Drawer::draw()
 {
-    QTimer::singleShot(100, this, SLOT(draw()));
+    QTimer::singleShot(100, this, &Drawer::draw);
     for (Drawable *drawable : drawables)
     {
         drawable->draw();
