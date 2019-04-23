@@ -18,12 +18,14 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void drawWidgets();
+    void makeWidgets();
 
 
 
 private:
     Ui::MainWindow *ui;
+
+    QList<QWidget *> widgetList;
 };
 
 #endif // MAINWINDOW_H
