@@ -6,11 +6,11 @@
         <file>images/buick.png</file>
         <file>images/peugeot.png</file>
         <file>images/jose.png</file>
-        <file>images/door.png</file>
-        <file>images/engine.png</file>
-        <file>images/keys.png</file>
-        <file>images/seat.png</file>
-        <file>images/tire.png</file>
-        <file>images/wheel.png</file>
+        <file>images/A.png</file>
+        <file>images/B.png</file>
+        <file>images/C.png</file>
+        <file>images/D.png</file>
+        <file>images/E.png</file>
+        <file>images/F.png</file>
     </qresource>
 </RCC>

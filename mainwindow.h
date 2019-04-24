@@ -34,6 +34,8 @@ private:
 
     QList<QWidget *> *widgetList = new QList<QWidget *>();
     QList<QWidget *> *queueList = new QList<QWidget *>();
+
+    void manageProcesses(QList<Process *> *list, Vehicle *vehicle, int i);
 };
 
 #endif // MAINWINDOW_H

@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     makeWidgets(300, 340, widgetList);
-    makeWidgets(700, 440, queueList);
+    makeWidgets(700, 700, queueList);
 
     drawer->run();
     production->run();
@@ -33,30 +33,55 @@ void MainWindow::makeWidgets(int x, int width, QList<QWidget *> *list)
 
 }
 
+void MainWindow::manageProcesses(QList<Process *> *list, Vehicle *vehicle, int i)
+{
+    QWidget *widget = widgetList[0][i];
+
+    for(Process *process : *list){
+        for (Process *subProcess : *production->getRunningQueues().value(i)){
+            if(process == subProcess) process->setWidget(widget);
+        }
+        vehicle->addComponent(process);
+    }
+}
+
 void MainWindow::on_vehicle1_clicked()
 {
     Vehicle *vehicleA = new Vehicle("A");
-    QWidget *widget = widgetList[0][0];
+    QWidget *qWidget = queueList[0][0];
 
-    vehicleA->addComponent(new Process("A", 3500, widget));
-    vehicleA->addComponent(new Process("B", 4800, widget));
-    vehicleA->addComponent(new Process("C", 10000, widget));
-    vehicleA->addComponent(new Process("D", 2500, widget));
-    vehicleA->addComponent(new Process("E", 5400, widget));
-    vehicleA->addComponent(new Process("F", 8400, widget));
+    QList<Process *> *pList = new QList<Process *>();
+    pList->push_back(new Process("A", 35000, qWidget));
+    pList->push_back(new Process("B", 48000, qWidget));
+    pList->push_back(new Process("C", 60000, qWidget));
+    pList->push_back(new Process("D", 25000, qWidget));
+    pList->push_back(new Process("E", 54000, qWidget));
+    pList->push_back(new Process("F", 84000, qWidget));
+
+    manageProcesses(pList, vehicleA, 1);
+
+    production->addVehicle(vehicleA, 1);
 }
+
 
 void MainWindow::on_vehicle2_clicked()
 {
-    Vehicle *vehicleA = new Vehicle("B");
+    Vehicle *vehicleB = new Vehicle("B");
+
+    QList<Process *> *pList = new QList<Process *>();
     /*
-    vehicleA->addComponent(new Process("C", 15000, widget));
-    vehicleA->addComponent(new Process("A", 2400, widget));
-    vehicleA->addComponent(new Process("B", 9100, widget));
-    vehicleA->addComponent(new Process("E", 6200, widget));
-    vehicleA->addComponent(new Process("D", 1200, widget));
-    vehicleA->addComponent(new Process("F", 4500, widget));
+    pList->push_back(new Process("C", 65000));
+    pList->push_back(new Process("A", 24000));
+    pList->push_back(new Process("B", 91000));
+    pList->push_back(new Process("E", 62000));
+    pList->push_back(new Process("D", 22000));
+    pList->push_back(new Process("F", 45000));
     */
+
+
+    manageProcesses(pList, vehicleB, 2);
+
+    production->addVehicle(vehicleB, 2);
 
 }
 
