@@ -33,6 +33,8 @@ void Process::makeLb()
     if (processes > 1) idLb->move(10*processes + (processes - 1)*100, 10);
     else idLb->move(10, 10);
 
+    idLb->show();
+
     rectangle = new QLabel(idLb);
 
 }
