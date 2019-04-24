@@ -20,7 +20,7 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void makeWidgets();
+    void makeWidgets(int x, int width, QList<QWidget *> list);
 
 private:
     Ui::MainWindow *ui;
@@ -28,6 +28,7 @@ private:
     ProductionManager *production = ProductionManager::getInstance();
 
     QList<QWidget *> widgetList;
+    QList<QWidget *> queueList;
 };
 
 #endif // MAINWINDOW_H

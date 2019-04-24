@@ -7,7 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    makeWidgets();
+    makeWidgets(300, 340, widgetList);
+    makeWidgets(700, 440, queueList);
 
     drawer->run();
     production->run();
@@ -18,15 +19,15 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::makeWidgets()
+void MainWindow::makeWidgets(int x, int width, QList<QWidget *> list)
 {
     for(int i = 1; i < 7; i++){
         QWidget *widget = new QWidget(ui->centralWidget);
         widget->setStyleSheet("QWidget { background-color: #a5b5bf; }");
-        widget->resize(340, 120);
-        if (widgetList.size() < 1) widget->move(200, 20);
-        else widget->move(200, (i - 1)*140 + 20);
-        widgetList.push_back(widget);
+        widget->resize(width, 120);
+        if (list.size() < 1) widget->move(x, 20);
+        else widget->move(x, (i - 1)*140 + 20);
+        list.push_back(widget);
     }
 }
 
