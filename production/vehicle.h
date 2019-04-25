@@ -12,11 +12,11 @@ public:
 
     void addComponent(Process *component);
 
-    QList<Process *> getComponents() const;
+    QList<Process *> *getComponents();
 
 private:
     QString id;
-    QList<Process *> components;
+    QList<Process *> *components;
 };
 
 #endif // VEHICLE_H

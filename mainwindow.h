@@ -7,6 +7,7 @@
 #include "production/vehicle.h"
 #include "production/productionmanager.h"
 #include "draw/drawer.h"
+#include <QTimer>
 
 namespace Ui {
 class MainWindow;
@@ -22,6 +23,9 @@ public:
 
     void makeWidgets(int x, int width, QList<QWidget *> *list);
 
+public slots:
+    void manageProcesses();
+
 private slots:
     void on_vehicle2_clicked();
 
@@ -30,12 +34,13 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Drawer *drawer = Drawer::getInstance();
-    ProductionManager *production = ProductionManager::getInstance();
-
     QList<QWidget *> *widgetList = new QList<QWidget *>();
     QList<QWidget *> *queueList = new QList<QWidget *>();
+    ProductionManager *production = ProductionManager::getInstance();
 
-    void manageProcesses(QList<Process *> *list, Vehicle *vehicle, int i);
+
+
+
 };
 
 #endif // MAINWINDOW_H

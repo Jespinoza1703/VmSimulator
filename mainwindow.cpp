@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     drawer->run();
     production->run();
+
+    manageProcesses();
 }
 
 MainWindow::~MainWindow()
@@ -33,15 +35,25 @@ void MainWindow::makeWidgets(int x, int width, QList<QWidget *> *list)
 
 }
 
-void MainWindow::manageProcesses(QList<Process *> *list, Vehicle *vehicle, int i)
+void MainWindow::manageProcesses()
 {
-    QWidget *widget = widgetList[0][i];
+    QTimer::singleShot(100, this, &MainWindow::manageProcesses);
 
-    for(Process *process : *list){
-        for (Process *subProcess : *production->getRunningQueues().value(i)){
-            if(process == subProcess) process->setWidget(widget);
+    QList<QList<Process *>*> runningQueues = production->getRunningQueues();
+    QList<QList<Process *>*> waitingQueues = production->getWaitingQueues();
+
+    int i = 0, j = 0;
+    for(QList<Process *> *runningQueue : runningQueues){
+        for(Process * subProcess : *runningQueue){
+            subProcess->setWidget(widgetList->value(i));
         }
-        vehicle->addComponent(process);
+        i++;
+    }
+    for(QList<Process *> *waitingQueue : waitingQueues){
+        for(Process * subProcess : *waitingQueue){
+            subProcess->setWidget(queueList->value(j));
+        }
+        j++;
     }
 }
 
@@ -50,15 +62,12 @@ void MainWindow::on_vehicle1_clicked()
     Vehicle *vehicleA = new Vehicle("A");
     QWidget *qWidget = queueList[0][0];
 
-    QList<Process *> *pList = new QList<Process *>();
-    pList->push_back(new Process("A", 35000, qWidget));
-    pList->push_back(new Process("B", 48000, qWidget));
-    pList->push_back(new Process("C", 60000, qWidget));
-    pList->push_back(new Process("D", 25000, qWidget));
-    pList->push_back(new Process("E", 54000, qWidget));
-    pList->push_back(new Process("F", 84000, qWidget));
-
-    manageProcesses(pList, vehicleA, 1);
+    vehicleA->addComponent(new Process("A", 35000, qWidget));
+    vehicleA->addComponent(new Process("B", 48000, qWidget));
+    vehicleA->addComponent(new Process("C", 60000, qWidget));
+    vehicleA->addComponent(new Process("D", 25000, qWidget));
+    vehicleA->addComponent(new Process("E", 54000, qWidget));
+    vehicleA->addComponent(new Process("F", 84000, qWidget));
 
     production->addVehicle(vehicleA, 1);
 }
@@ -70,16 +79,13 @@ void MainWindow::on_vehicle2_clicked()
 
     QList<Process *> *pList = new QList<Process *>();
     /*
-    pList->push_back(new Process("C", 65000));
-    pList->push_back(new Process("A", 24000));
-    pList->push_back(new Process("B", 91000));
-    pList->push_back(new Process("E", 62000));
-    pList->push_back(new Process("D", 22000));
-    pList->push_back(new Process("F", 45000));
+    vehicleA->addComponent(new Process("C", 65000, qWidget));
+    vehicleA->addComponent(new Process("A", 24000, qWidget));
+    vehicleA->addComponent(new Process("B", 91000, qWidget));
+    vehicleA->addComponent(new Process("E", 62000, qWidget));
+    vehicleA->addComponent(new Process("D", 22000, qWidget));
+    vehicleA->addComponent(new Process("F", 45000, qWidget));
     */
-
-
-    manageProcesses(pList, vehicleB, 2);
 
     production->addVehicle(vehicleB, 2);
 

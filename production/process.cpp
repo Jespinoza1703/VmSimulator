@@ -8,6 +8,7 @@ Process::Process(QString id, float time, QWidget *widget) :
     percent = 0;
     startTime.start();
     makeLb();
+    draw();
 }
 
 QWidget *Process::getWidget() const
@@ -17,7 +18,9 @@ QWidget *Process::getWidget() const
 
 void Process::setWidget(QWidget *value)
 {
+    widget = nullptr;
     widget = value;
+    idLb->setParent(value);
 }
 
 void Process::draw()

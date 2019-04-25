@@ -15,7 +15,7 @@ void ProductionManager::run()
 void ProductionManager::addVehicle(Vehicle *vehicle, int type)
 {
     QList<Process *> *waitingQueue = waitingQueues.value(type - 1);
-    for (Process *process : vehicle->getComponents())
+    for (Process *process : *vehicle->getComponents())
     {
         waitingQueue->push_back(process);
     }
