@@ -82,20 +82,81 @@ void MainWindow::on_vehicle1_clicked()
 void MainWindow::on_vehicle2_clicked()
 {
     Vehicle *vehicleB = new Vehicle("B");
+    QWidget *qWidget = queueList[0][1];
 
-    QList<Process *> *pList = new QList<Process *>();
-    /*
-    vehicleA->addComponent(new Process("C", 65000, qWidget));
-    vehicleA->addComponent(new Process("A", 24000, qWidget));
-    vehicleA->addComponent(new Process("B", 91000, qWidget));
-    vehicleA->addComponent(new Process("E", 62000, qWidget));
-    vehicleA->addComponent(new Process("D", 22000, qWidget));
-    vehicleA->addComponent(new Process("F", 45000, qWidget));
-    */
+    vehicleB->addComponent(new Process("C", 62000, qWidget));
+    vehicleB->addComponent(new Process("A", 25000, qWidget));
+    vehicleB->addComponent(new Process("B", 47000, qWidget));
+    vehicleB->addComponent(new Process("E", 36000, qWidget));
+    vehicleB->addComponent(new Process("D", 71000, qWidget));
+    vehicleB->addComponent(new Process("F", 18000, qWidget));
 
     production->addVehicle(vehicleB, 2);
 
 }
 
+void MainWindow::on_vehicle3_clicked()
+{
+
+    Vehicle *vehicleC = new Vehicle("C");
+    QWidget *qWidget = queueList[0][2];
+
+    vehicleC->addComponent(new Process("D", 55000, qWidget));
+    vehicleC->addComponent(new Process("E", 96000, qWidget));
+    vehicleC->addComponent(new Process("A", 78000, qWidget));
+    vehicleC->addComponent(new Process("C", 60000, qWidget));
+    vehicleC->addComponent(new Process("B", 87000, qWidget));
+    vehicleC->addComponent(new Process("F", 22000, qWidget));
+
+    production->addVehicle(vehicleC, 3);
+}
 
 
+void MainWindow::on_vehicle4_clicked()
+{
+
+    Vehicle *vehicleD = new Vehicle("D");
+    QWidget *qWidget = queueList[0][3];
+
+    vehicleD->addComponent(new Process("B", 53000, qWidget));
+    vehicleD->addComponent(new Process("C", 61000, qWidget));
+    vehicleD->addComponent(new Process("D", 48000, qWidget));
+    vehicleD->addComponent(new Process("A", 52000, qWidget));
+    vehicleD->addComponent(new Process("F", 45000, qWidget));
+    vehicleD->addComponent(new Process("E", 69000, qWidget));
+
+    production->addVehicle(vehicleD, 4);
+}
+
+void MainWindow::on_vehicle5_clicked()
+{
+
+    Vehicle *vehicleE = new Vehicle("E");
+    QWidget *qWidget = queueList[0][4];
+
+    vehicleE->addComponent(new Process("E", 44000, qWidget));
+    vehicleE->addComponent(new Process("F", 66000, qWidget));
+    vehicleE->addComponent(new Process("B", 83000, qWidget));
+    vehicleE->addComponent(new Process("C", 72000, qWidget));
+    vehicleE->addComponent(new Process("A", 21000, qWidget));
+    vehicleE->addComponent(new Process("D", 32000, qWidget));
+
+    production->addVehicle(vehicleE, 5);
+}
+
+
+void MainWindow::on_vehicle6_clicked()
+{
+
+    Vehicle *vehicleF = new Vehicle("F");
+    QWidget *qWidget = queueList[0][5];
+
+    vehicleF->addComponent(new Process("F", 77000, qWidget));
+    vehicleF->addComponent(new Process("D", 62000, qWidget));
+    vehicleF->addComponent(new Process("C", 57000, qWidget));
+    vehicleF->addComponent(new Process("B", 45000, qWidget));
+    vehicleF->addComponent(new Process("E", 84000, qWidget));
+    vehicleF->addComponent(new Process("A", 90000, qWidget));
+
+    production->addVehicle(vehicleF, 6);
+}

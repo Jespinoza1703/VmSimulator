@@ -42,6 +42,7 @@ private:
     QLabel *rectangle;
     int lbWidth;
     int lbHeight;
+
 };
 
 #endif // PROCESS_H

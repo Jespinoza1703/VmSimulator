@@ -1,4 +1,5 @@
 #include "process.h"
+#include "production/productionmanager.h"
 
 Process::Process(QString id, float time, QWidget *widget) :
     id(id), time(time), widget(widget)
@@ -39,7 +40,6 @@ void Process::draw()
     float elapsedTime = startTime.elapsed();
     percent = elapsedTime / time;
 
-
     float x = percent * idLb->width();
     rectangle->setStyleSheet("QLabel { background-color: green; }");
     rectangle->resize(x, idLb->height());
@@ -47,6 +47,11 @@ void Process::draw()
     idLb->show();
     imageLb->show();
     rectangle->show();
+
+    if(percent >= 1) {
+        ProductionManager::getInstance()->removeProcess(this);
+        delete idLb;
+    }
 }
 
 void Process::makeLb()

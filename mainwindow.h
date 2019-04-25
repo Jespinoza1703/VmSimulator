@@ -31,6 +31,14 @@ private slots:
 
     void on_vehicle1_clicked();
 
+    void on_vehicle3_clicked();
+
+    void on_vehicle4_clicked();
+
+    void on_vehicle5_clicked();
+
+    void on_vehicle6_clicked();
+
 private:
     Ui::MainWindow *ui;
     Drawer *drawer = Drawer::getInstance();

@@ -23,6 +23,8 @@ public:
 
     QList<QList<Process *> *> getWaitingQueues() const;
 
+    void removeProcess(Process *process);
+
 private slots:
     void updateQueues();
 

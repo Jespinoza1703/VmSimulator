@@ -49,6 +49,16 @@ QList<QList<Process *> *> ProductionManager::getWaitingQueues() const
     return waitingQueues;
 }
 
+void ProductionManager::removeProcess(Process *process)
+{
+    for(QList<Process *> *runningQueue : runningQueues){
+        if(runningQueue->contains(process)){
+            runningQueue->removeOne(process);
+            dequeueProcess(process);
+        }
+    }
+}
+
 QList<QList<Process *> *> ProductionManager::getRunningQueues() const
 {
     return runningQueues;
