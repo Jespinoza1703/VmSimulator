@@ -27,6 +27,10 @@ public:
     QWidget *getWidget() const;
     void setWidget(QWidget *value);
 
+    QLabel *getIdLb() const;
+
+    void setLabelPos(int i);
+
 private:
     QLabel *idLb;
     QLabel *imageLb;

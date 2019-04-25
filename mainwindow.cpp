@@ -44,14 +44,20 @@ void MainWindow::manageProcesses()
 
     int i = 0, j = 0;
     for(QList<Process *> *runningQueue : runningQueues){
+        int k = 0;
         for(Process * subProcess : *runningQueue){
             subProcess->setWidget(widgetList->value(i));
+            subProcess->setLabelPos(k);
+            k++;
         }
         i++;
     }
     for(QList<Process *> *waitingQueue : waitingQueues){
+        int n = 0;
         for(Process * subProcess : *waitingQueue){
             subProcess->setWidget(queueList->value(j));
+            subProcess->setLabelPos(n);
+            n++;
         }
         j++;
     }

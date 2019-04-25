@@ -21,6 +21,17 @@ void Process::setWidget(QWidget *value)
     widget = nullptr;
     widget = value;
     idLb->setParent(value);
+    idLb->show();
+}
+
+QLabel *Process::getIdLb() const
+{
+    return idLb;
+}
+
+void Process::setLabelPos(int i)
+{
+    idLb->move(10*(i+1) + i*100, 10);
 }
 
 void Process::draw()
