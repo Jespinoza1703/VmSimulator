@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     makeWidgets(300, 340, widgetList);
-    makeWidgets(700, 700, queueList);
+    makeWidgets(700, 1150, queueList);
 
     drawer->run();
     production->run();

@@ -27,7 +27,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/images/acura.png) 0 0 0 0 stretch stretch;</string>
+     <string notr="true">#vehicle1 {
+border-image: url(:/images/acura.png) 0 0 0 0 stretch stretch;
+}
+QPushButton:!pressed{
+border: 5px white;
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -43,7 +48,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/images/jose.png) 0 0 0 0 stretch;</string>
+     <string notr="true">#vehicle2{
+border-image: url(:/images/jose.png) 0 0 0 0 stretch stretch;
+}
+QPushButton:!pressed{
+border: 5px white;
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -59,7 +69,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/images/mitsubishi.png) 0 0 0 0 stretch stretch;</string>
+     <string notr="true">#vehicle3 {
+border-image: url(:/images/mitsubishi.png) 0 0 0 0 stretch stretch;
+}
+QPushButton:!pressed{
+border: 5px white;
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -75,7 +90,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/images/volkswagen.png);</string>
+     <string notr="true">#vehicle4{
+border-image: url(:/images/volkswagen.png) 0 0 0 0 stretch stretch;
+}
+QPushButton:!pressed{
+border: 5px white;
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -91,7 +111,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/images/buick.png);</string>
+     <string notr="true">#vehicle5 {
+border-image: url(:/images/buick.png) 0 0 0 0 stretch stretch;
+}
+QPushButton:!pressed{
+border: 5px white;
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -107,7 +132,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/images/peugeot.png) </string>
+     <string notr="true">#vehicle6{
+border-image: url(:/images/peugeot.png) 0 0 0 0 stretch stretch;
+}
+QPushButton:!pressed{
+border: 5px white;
+}</string>
     </property>
     <property name="text">
      <string/>
