@@ -1,0 +1,17 @@
+\hypertarget{classDrawable}{}\section{Drawable Class Reference}
+\label{classDrawable}\index{Drawable@{Drawable}}
+
+
+Inheritance diagram for Drawable\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDrawable_aa37d7b328240d343134adcfe5e4dcd38}\label{classDrawable_aa37d7b328240d343134adcfe5e4dcd38}} 
+virtual void {\bfseries draw} ()=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+draw/drawable.\+h\end{DoxyCompactItemize}

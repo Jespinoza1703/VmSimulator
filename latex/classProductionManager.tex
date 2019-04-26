@@ -1,0 +1,85 @@
+\hypertarget{classProductionManager}{}\section{Production\+Manager Class Reference}
+\label{classProductionManager}\index{Production\+Manager@{Production\+Manager}}
+
+
+Inheritance diagram for Production\+Manager\+:
+% FIG 0
+
+
+Collaboration diagram for Production\+Manager\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProductionManager_a24830d912caebb883604564b3223ef6d}\label{classProductionManager_a24830d912caebb883604564b3223ef6d}} 
+void {\bfseries run} ()
+\item 
+\mbox{\Hypertarget{classProductionManager_a1ece64362cadfbc93342111bf9ca75d3}\label{classProductionManager_a1ece64362cadfbc93342111bf9ca75d3}} 
+void {\bfseries add\+Vehicle} (\hyperlink{classVehicle}{Vehicle} $\ast$vehicle, int type)
+\item 
+\mbox{\Hypertarget{classProductionManager_a20996508236c487862e1cdcfa2654635}\label{classProductionManager_a20996508236c487862e1cdcfa2654635}} 
+Q\+List$<$ Q\+List$<$ \hyperlink{classProcess}{Process} $\ast$ $>$ $\ast$ $>$ {\bfseries get\+Running\+Queues} () const
+\item 
+\mbox{\Hypertarget{classProductionManager_ab1b674af0e5b7b97e483628337661ce3}\label{classProductionManager_ab1b674af0e5b7b97e483628337661ce3}} 
+Q\+List$<$ Q\+List$<$ \hyperlink{classProcess}{Process} $\ast$ $>$ $\ast$ $>$ {\bfseries get\+Waiting\+Queues} () const
+\item 
+\mbox{\Hypertarget{classProductionManager_a01f2b2ef8e4d6d8c0af5ac3e81af36dd}\label{classProductionManager_a01f2b2ef8e4d6d8c0af5ac3e81af36dd}} 
+void {\bfseries remove\+Process} (\hyperlink{classProcess}{Process} $\ast$process)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProductionManager_a03904f54aa71ebe4c80513e18c7d586f}\label{classProductionManager_a03904f54aa71ebe4c80513e18c7d586f}} 
+static \hyperlink{classProductionManager}{Production\+Manager} $\ast$ {\bfseries get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProductionManager_a80f800ba0bedcf7efe4c721d683af8c6}\label{classProductionManager_a80f800ba0bedcf7efe4c721d683af8c6}} 
+void {\bfseries update\+Queues} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProductionManager_a24834c9d1b5e3cbcf092f558b50fc9b4}\label{classProductionManager_a24834c9d1b5e3cbcf092f558b50fc9b4}} 
+void {\bfseries enqueue\+Process} (\hyperlink{classProcess}{Process} $\ast$process)
+\item 
+\mbox{\Hypertarget{classProductionManager_aa1af994a472e9dafae97bef8aa48d145}\label{classProductionManager_aa1af994a472e9dafae97bef8aa48d145}} 
+void {\bfseries dequeue\+Process} (\hyperlink{classProcess}{Process} $\ast$process)
+\item 
+\mbox{\Hypertarget{classProductionManager_a89fd7fe60dbc3d32d5db1c79ef3f3a81}\label{classProductionManager_a89fd7fe60dbc3d32d5db1c79ef3f3a81}} 
+void {\bfseries fill\+Running\+Queue} (int index)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProductionManager_a5e38737a212a31a7d82eed5ef102f611}\label{classProductionManager_a5e38737a212a31a7d82eed5ef102f611}} 
+\hyperlink{classDrawer}{Drawer} $\ast$ {\bfseries drawer}
+\item 
+\mbox{\Hypertarget{classProductionManager_aa7906bebe33d0069d9df51ab729b5b58}\label{classProductionManager_aa7906bebe33d0069d9df51ab729b5b58}} 
+int {\bfseries update\+Time}
+\item 
+\mbox{\Hypertarget{classProductionManager_af323dad06f6b9992c15b8d0704a1cc13}\label{classProductionManager_af323dad06f6b9992c15b8d0704a1cc13}} 
+int {\bfseries queue\+Limit}
+\item 
+\mbox{\Hypertarget{classProductionManager_ad08303dc493a0614178600b603ff1954}\label{classProductionManager_ad08303dc493a0614178600b603ff1954}} 
+int {\bfseries production\+Lines}
+\item 
+\mbox{\Hypertarget{classProductionManager_a1be2f7aa48015f5dc2b434f73c89dfa1}\label{classProductionManager_a1be2f7aa48015f5dc2b434f73c89dfa1}} 
+Q\+List$<$ Q\+List$<$ \hyperlink{classProcess}{Process} $\ast$ $>$ $\ast$ $>$ {\bfseries running\+Queues}
+\item 
+\mbox{\Hypertarget{classProductionManager_af3555a4bd234cbfb31cabe70c2008b17}\label{classProductionManager_af3555a4bd234cbfb31cabe70c2008b17}} 
+Q\+List$<$ Q\+List$<$ \hyperlink{classProcess}{Process} $\ast$ $>$ $\ast$ $>$ {\bfseries waiting\+Queues}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProductionManager_a24b4a3f2e006dc488f622970d10c0a80}\label{classProductionManager_a24b4a3f2e006dc488f622970d10c0a80}} 
+static \hyperlink{classProductionManager}{Production\+Manager} $\ast$ {\bfseries instance} = new \hyperlink{classProductionManager}{Production\+Manager}()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+production/productionmanager.\+h\item 
+production/productionmanager.\+cpp\end{DoxyCompactItemize}
